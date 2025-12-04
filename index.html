@@ -1,238 +1,391 @@
 <!doctype html>
-<html lang="en" class="no-js">
-  <head>
-    <meta charset="utf-8">
-    <title>Zimo Zhao's Homepage</title>
-    <meta property="og:locale" content="en">
-    <meta property="og:site_name" content="Zimo Zhao">
-    <meta property="og:title" content="Zimo Zhao">
-    <meta property="og:description" content="Academic Personal Homepage of Zimo Zhao">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#157878">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="preload" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" as="style" type="text/css" crossorigin>
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" rel="stylesheet">
-    <style>
-      body {
-        font-family: 'Open Sans', Arial, sans-serif;
-        background: #f8f9fa;
-        color: #222;
-        margin: 0;
-        padding: 0;
-      }
-      .masthead {
-        background: #157878;
-        color: #fff;
-        padding: 1.5rem 0 1rem 0;
-        text-align: center;
-      }
-      .masthead__menu ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 1.2rem;
-      }
-      .masthead__menu-item a {
-        color: #fff;
-        text-decoration: none;
-        font-weight: 700;
-        font-size: 1.1rem;
-        transition: color 0.2s;
-      }
-      .masthead__menu-item a:hover {
-        color: #ffd700;
-      }
-      #main {
-        display: flex;
-        max-width: 1100px;
-        margin: 2rem auto;
-        gap: 2rem;
-        padding: 0 1rem;
-      }
-      .sidebar {
-        min-width: 260px;
-        max-width: 320px;
-        background: #fff;
-        border-radius: 12px;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.07);
-        padding: 2rem 1.5rem 1.5rem 1.5rem;
-        text-align: center;
-        flex-shrink: 0;
-      }
-      .author__avatar img {
-        width: 120px;
-        height: 120px;
-        border-radius: 50%;
-        object-fit: cover;
-        border: 4px solid #157878;
-        margin-bottom: 1rem;
-      }
-      .author__name {
-        font-size: 1.5rem;
-        font-weight: 700;
-        margin: 0.5rem 0 0.2rem 0;
-      }
-      .author__urls-wrapper {
-        margin-top: 1.2rem;
-      }
-      .author__urls li {
-        margin: 0.3rem 0;
-        font-size: 1rem;
-      }
-      .page__inner-wrap {
-        background: #fff;
-        border-radius: 12px;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.07);
-        padding: 2.5rem 2rem 2rem 2rem;
-        margin-bottom: 2rem;
-      }
-      .page__content h1 {
-        color: #157878;
-        font-size: 1.4rem;
-        margin-top: 2rem;
-        margin-bottom: 1rem;
-        border-bottom: 1px solid #e0e0e0;
-        padding-bottom: 0.3rem;
-      }
-      .page__content ul {
-        padding-left: 1.2rem;
-        margin-bottom: 1.2rem;
-      }
-      .page__content li {
-        margin-bottom: 0.5rem;
-        line-height: 1.7;
-      }
-      .footer_site {
-        background: #157878;
-        color: #fff;
-        text-align: center;
-        padding: 1.2rem 0 0.7rem 0;
-        font-size: 1rem;
-        margin-top: 2rem;
-      }
-      .footer_site a {
-        color: #ffd700;
-        text-decoration: underline;
-      }
-      @media (max-width: 900px) {
-        #main {
-          flex-direction: column;
-          gap: 1.5rem;
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name=keywords content="Zimo Zhao, 赵子墨, Data Science, Machine Learning, Large Language Models">
+
+	<title>Zimo Zhao's Homepage</title>
+
+	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+	
+	<style type="text/css">
+	.container {
+	padding:21px 16px 16px 16px;
+	width: 66%;
+	}
+	h2,h4{display:inline;}
+	hr{border-top: 1px solid #9D9D9D;width:100%;}
+
+	li{font-size: 16px;}
+	
+	#goTopBtn{position: fixed; text-align: center; line-height: 30px; width: 30px; bottom: 35px; cursor: pointer; right: 20px;_position: absolute; _right: auto}
+	
+	.hobby-images {
+		margin-top: 20px;
+		margin-bottom: 20px;
+	}
+	
+	.hobby-images img {
+		max-width: 45%;
+		margin: 10px 2%;
+		border-radius: 8px;
+		box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+	}
+	</style>
+
+	<script type="text/javascript">
+    window.onscroll = function(){
+        var t = document.documentElement.scrollTop || document.body.scrollTop;
+        var div_up = document.getElementById("uptop");
+        if(div_up) {
+            t > 300 ? div_up.style.display="block" : div_up.style.display="none";
         }
-        .sidebar {
-          max-width: 100%;
-          margin: 0 auto;
-        }
-        .page__inner-wrap {
-          padding: 1.2rem 0.7rem 1.2rem 0.7rem;
-        }
-      }
-      @media (max-width: 600px) {
-        .masthead__menu ul {
-          flex-direction: column;
-          gap: 0.5rem;
-        }
-        .masthead {
-          padding: 1rem 0 0.7rem 0;
-        }
-        .sidebar {
-          padding: 1.2rem 0.5rem 1rem 0.5rem;
-        }
-      }
-    </style>
-    <link rel="stylesheet" href="assets/css/academicons.css"/>
-  </head>
-  <body>
-    <a id="skip-to-content" href="#main" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;">Skip to content</a>
-    <div class="masthead">
-      <div class="masthead__inner-wrap">
-        <div class="masthead__menu">
-          <nav id="site-nav" class="greedy-nav">
-            <ul class="visible-links">
-              <li class="masthead__menu-item masthead__menu-item--lg masthead__menu-home-item"><a href="#about-me">Homepage</a></li>
-              <li class="masthead__menu-item"><a href="#about-me">About Me</a></li>
-              <li class="masthead__menu-item"><a href="#education">Education</a></li>
-              <li class="masthead__menu-item"><a href="#awards">Awards & Certificates</a></li>
-              <li class="masthead__menu-item"><a href="#publications">Publications</a></li>
-              <li class="masthead__menu-item"><a href="#research">Research Experience</a></li>
-              <li class="masthead__menu-item"><a href="#experience">Professional Experience</a></li>
-              <li class="masthead__menu-item"><a href="#activities">Extracurricular Activities</a></li>
-              <li class="masthead__menu-item"><a href="#skills">Skills</a></li>
-            </ul>
-          </nav>
-        </div>
-      </div>
-    </div>
-    <div id="main" role="main">
-      <div class="sidebar sticky">
-        <div itemscope itemtype="http://schema.org/Person" class="profile_box">
-          <div class="author__avatar">
-            <img src="Zhao Zimo_Profile Photo.jpg" class="author__avatar" alt="Zimo Zhao">
-          </div>
-          <div class="author__content">
-            <h3 class="author__name">Zimo Zhao</h3>
-          </div>
-          <div class="author__urls-wrapper">
-            <ul class="author__urls social-icons">
-              <li><div style="white-space: normal; margin-top: 1em;">China</div></li>
-              <li><a href="mailto:223040132@link.cuhk.edu.cn"><i class="fas fa-fw fa-envelope" aria-hidden="true"></i> Email</a></li>
-              <li><a href="https://scholar.google.com/citations?hl=en&user=j9NhBusAAAAJ" target="_blank"><i class="fas fa-fw fa-graduation-cap" aria-hidden="true"></i> Google Scholar</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
-        <div class="page__inner-wrap">
-          <section class="page__content" itemprop="text">
-            <h1 id="about-me">About Me</h1>
-            <p>Hello! I'm Zhao Zimo, currently a first-year PhD student in Data Science at the City University of Hong Kong (CityU), advised by Prof. Xiangyu Zhao. Prior to this, I earned my Master's degree in Data Science from The Chinese University of Hong Kong, Shenzhen, where I was supervised by Prof. Benyou Wang and Prof. Xiao Li. I hold a Bachelor's degree in Data Science (with a minor in Finance) from Lingnan University, under the supervision of Prof. Haoran Xie.<br>
-My research interests lie in large language models, recommendation systems, and urban computing.</p>
-            <h1 id="awards">Awards & Certificates</h1>
-            <ul>
-              <li>Gold Medal at the 2022 iENA - International Trade Fair "Ideas-Inventions-New Products". This recognition encouraged me to keep pushing the boundaries of innovation.</li>
-              <li>Gold Medal, Nuremberg International Competition Invention Award 2016. A proud moment from my early days of creative exploration.</li>
-              <li>Certificate of Blockchain for Business Project-based Internship, Hong Kong Blockchain Society 2021. This experience broadened my understanding of blockchain applications in business.</li>
-            </ul>
-            <h1 id="publications">Publications</h1>
-            <ul>
-              <li>"Research on carbon emissions of urban residents' three types of dining based on the whole life cycle" (<i>International Journal of Low-Carbon Technologies</i>, 2022). This work reflects my interest in sustainable technology and its impact on society.</li>
-              <li>"Novel method for microencapsulation of eutectic hydrated salt as a phase change material for thermal energy storage" (<i>International Journal of Low-Carbon Technologies</i>, 2022). Here, I explored innovative materials for energy efficiency.</li>
-            </ul>
-            <h1 id="research">Research Experience</h1>
-            <ul>
-              <li><strong>LLMS Memory Efficiency (Quantized Model with BAdam)</strong> (2024.06 - Present): As a research assistant, I have been optimizing large language models for memory efficiency, experimenting with quantization and advanced optimization techniques. It's exciting to see how these improvements can make AI more accessible and scalable.</li>
-              <li><strong>Mobile-Agent Synthesis Test</strong> (2024.06 - Present): I am building multi-agent systems that simulate human behavior in virtual communities, aiming to better understand social phenomena and the potential of AI agents in social science research.</li>
-              <li><strong>Hong Kong Metropolitan University</strong> (2022.06 - 2022.09): Worked on image processing and unsupervised learning, contributing to the creation of a high-quality dataset for further research in computer vision.</li>
-            </ul>
-            <h1 id="experience">Professional Experience</h1>
-            <ul>
-              <li><strong>Shenzhen Aratek Technology Co., Ltd.</strong> (03/2024 - 07/2024): As an AI Algorithm Engineer, I contributed to a clothing recognition project, developing deep learning solutions for real-world surveillance scenarios. The challenge of improving accuracy in complex environments was both demanding and rewarding.</li>
-              <li><strong>Huanding Big Data Institute</strong> (06/2021 - 09/2021): During my internship as a data analyst, I worked on Chinese medicine traceability, applying machine learning to uncover insights from traditional data. This experience strengthened my data wrangling and analytical skills.</li>
-            </ul>
-            <h1 id="activities">Extracurricular Activities</h1>
-            <ul>
-              <li>In 2024, I led the development of Data-Agent, an LLM-based system for data analysis and visualization, as part of the Generative AI and Application Camp. It was a fantastic opportunity to turn ideas into practical tools.</li>
-              <li>I have participated in various academic events, including the QE Data Challenge (2023), research symposiums, and international conferences, where I enjoyed exchanging ideas and learning from peers worldwide.</li>
-              <li>My academic journey has also included exchange programs, which have broadened my perspective and enriched my network.</li>
-            </ul>
-            <h1 id="skills">Skills</h1>
-            <ul>
-              <li>Proficient with tools such as Conda, LaTeX, VSCode, Xshell, and Git. I value efficiency and reproducibility in my workflow.</li>
-              <li>Programming: Python is my language of choice for most projects, but I am also comfortable with R and SQL for data analysis and research.</li>
-            </ul>
-          </section>
-        </div>
-      </article>
-    </div>
-    <div class="footer_site">
-      <hr/>
-      <div class="footer_copyright">
-        © 2024 Zimo Zhao | Powered by <a class="page_a" href="https://github.com/RayeRen/acad-homepage.github.io">acad</a>
-      </div>
-    </div>
-  </body>
-</html> 
+    }
+
+    function scroTop(){
+        document.body.scrollTop = document.documentElement.scrollTop = 0;
+    }
+	</script>
+
+	<script type="text/javascript"> 
+	function goTopEx() { 
+		var obj = document.getElementById("goTopBtn"); 
+		function getScrollTop() { 
+			return document.documentElement.scrollTop + document.body.scrollTop; 
+		} 
+		function setScrollTop(value) { 
+			if (document.documentElement.scrollTop) { 
+			document.documentElement.scrollTop = value; 
+			} else { 
+			document.body.scrollTop = value; 
+			} 
+		} 
+		window.onscroll = function() { 
+			getScrollTop() > 0 ? obj.style.display = "": obj.style.display = "none"; 
+		} 
+		obj.onclick = function() { 
+			document.body.scrollTop = document.documentElement.scrollTop = 0;
+		} 
+	} 
+	</script> 
+
+</head>
+
+<body>
+
+	<script type=text/javascript>goTopEx();</script> 
+	
+	<div class="container">
+
+		<div class="row"  >
+			<div class="col-md-6" style="width:210px;float:left;">
+				<img src="Zhao Zimo_Profile Photo.jpg" style="width:210px;border-radius:10px;">
+			</div>
+			<div class="col-md-9">
+				<h2>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Zimo Zhao&nbsp;&nbsp;&nbsp;<b style="font-family:STKaiti">赵子墨</b>
+				</h2>
+
+				<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PhD Student</h3><br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://aml-cityu.github.io/" target="_blank">Applied Machine Learning Lab</a><br>
+  				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.ds.cityu.edu.hk/" target="_blank">Department of Data Science</a><br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.cityu.edu.hk/cc/" target="_blank">College of Computing</a><br>
+  				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.cityu.edu.hk/" target="_blank">City University of Hong Kong (CityU)</a><br>
+			</div>
+		</div>	
+		
+		<br>
+		<div class="row">
+			<div class="col-md-12">
+
+				<table class="table table-striped">
+			        <tbody>
+			          <tr>
+			            <td>Email:</td>
+				    <td>223040132 [at] link [dot] cuhk [dot] edu [dot] cn</td>
+			          </tr>
+			         
+			          <tr>
+			            <td>Location:</td>
+			            <td>Hong Kong, China</td>
+			          </tr>
+					  
+			  	  <tr>
+			            <td>Links:</td>
+			            <td>
+					    <a href="https://scholar.google.com/citations?hl=en&user=j9NhBusAAAAJ">[Google Scholar]</a> &nbsp;&nbsp;&nbsp;
+					    <a href="#publications">[Publications]</a>&nbsp;&nbsp;&nbsp;
+					    <a href="#research">[Research]</a> &nbsp;&nbsp;&nbsp;
+					    <a href="#awards">[Awards]</a>&nbsp;&nbsp;&nbsp;
+					    <a href="#experience">[Experience]</a>
+				    </td>
+			          </tr>
+			          
+			        </tbody>
+		      </table>
+			</div>
+		</div>	
+		
+		<hr>
+		
+		
+		<h3 id="bio">Brief Biography</h3> 
+		<div class="row text-justify">
+			<div class="col-md-12">
+				<p style="text-align: justify;">
+					Zimo Zhao is currently a first-year PhD student in Data Science at City University of Hong Kong (CityU), advised by Prof. Xiangyu Zhao. He completed his Master's degree in Data Science at The Chinese University of Hong Kong, Shenzhen, under the supervision of Prof. Benyou Wang and Prof. Xiao Li. He holds a Bachelor's degree in Data Science with a minor in Finance from Lingnan University, where he was supervised by Prof. Haoran Xie.
+				</p>
+
+				<p>				
+					His current research interests include:
+					<ul>
+					<li>Large Language Models and Their Applications</li>
+					<li>Recommender Systems and Personalization</li>
+					<li>Urban Computing and Spatio-Temporal Data Analysis</li>
+					<li>AI for Social Good: Healthcare, Finance, and Sustainability</li>
+					</ul>
+				</p>
+				
+				<p>				
+					His research has been published in top-tier venues including <i>NeurIPS, International Journal of Low-Carbon Technologies, and Nicotine & Tobacco Research</i>. He has been awarded <i>Gold Medals at iENA International Trade Fair (2022) and Nuremberg International Competition Invention Award (2016)</i>. His work focuses on developing efficient and practical AI systems that can make a real-world impact.
+				</p>
+
+				<p>				
+					He has worked on various cutting-edge projects including LLM memory optimization with quantized models, multi-agent systems for social simulation, and deep learning solutions for computer vision applications. His algorithms and models have been applied in real-world scenarios in collaboration with industry partners.
+				</p>
+				
+				<span style="color:red"><b><i>Research Interests </i></b></span>
+				<ul>
+					<li>I am passionate about developing <u>efficient large language models</u> that can be deployed in resource-constrained environments</li>
+					<li>I am interested in <u>multi-agent systems</u> for simulating and understanding complex social phenomena</li>
+					<li>I focus on <u>recommendation systems</u> that balance accuracy with fairness and long-term user satisfaction</li>
+				</ul>
+
+			</div>
+			
+		</div>
+		
+		
+		<hr>
+		<h3 id="news">News</h3>
+		
+		<div class="row">
+			<div class="col-md-12">
+				<ul>
+					<li>12/2025: Our paper "Data Efficient Adaptation in Large Language Models via Continuous Low-Rank Fine-Tuning" has been accepted by <span style="color:red"><b>NeurIPS 2025</b></span>! 🎉</li>
+					<li>12/2025: Our paper "Identifying Key Predictors of Smoking Cessation Success: Text-Based Feature Selection Using a Large Language Model" has been accepted by <b>Nicotine & Tobacco Research</b>!</li>
+					<li>06/2025: Our paper "Wealth-Voyager: Navigating Intelligent Wealth Management with a Multi-Agent Framework" has been accepted by <b>Generative Artificial Intelligence for Business 2025</b>!</li>
+					<li>06/2024: Started my research on LLM memory efficiency optimization with quantized models and BAdam as Research Assistant</li>
+					<li>06/2024: Initiated the Mobile-Agent Synthesis Test project, building multi-agent systems for virtual community simulation</li>
+					<li>03/2024: Joined Shenzhen Aratek Technology Co., Ltd. as AI Algorithm Engineer, working on clothing recognition systems</li>
+					<li>09/2023: Started my PhD journey at City University of Hong Kong under Prof. Xiangyu Zhao</li>
+					<li>2022: Won <span style="color:red"><b>Gold Medal</b></span> at iENA - International Trade Fair "Ideas-Inventions-New Products" 🥇</li>
+					<li>2022: Published research on carbon emissions and sustainable technology in <i>International Journal of Low-Carbon Technologies</i></li>
+					<li>06/2022: Started research on image processing and unsupervised learning at Hong Kong Metropolitan University</li>
+					<li>06/2021: Joined Huanding Big Data Institute as Data Analyst Intern, working on Chinese medicine traceability</li>
+					<li>2021: Completed Blockchain for Business Project-based Internship with Hong Kong Blockchain Society</li>
+					<li>2016: Won <span style="color:red"><b>Gold Medal</b></span> at Nuremberg International Competition Invention Award 🏆</li>
+				</ul>
+			</div>
+		</div>
+
+		
+		<hr>
+		
+		<h3 id="publications">Publications</h3>
+		<div class="row">
+			<div class="col-md-12">
+				<span style="color:red"><b><i> Conference & Journal Papers </i></b></span>
+				<ul>
+					<li><b>NeurIPS'2025</b>
+					<br>Data Efficient Adaptation in Large Language Models via Continuous Low-Rank Fine-Tuning <a href=""><u>[link]</u></a> <br>
+					</li>
+
+					<li><b>Nicotine & Tobacco Research'2025</b>
+					<br>Identifying Key Predictors of Smoking Cessation Success: Text-Based Feature Selection Using a Large Language Model <a href=""><u>[link]</u></a> <br>
+					</li>
+
+					<li><b>Generative AI for Business'2025</b>
+					<br>Wealth-Voyager: Navigating Intelligent Wealth Management with a Multi-Agent Framework <a href=""><u>[link]</u></a> <br>
+					</li>
+					
+					<li><b>International Journal of Low-Carbon Technologies'2022</b>
+					<br>Research on carbon emissions of urban residents' three types of dining based on the whole life cycle <a href=""><u>[link]</u></a> <br>
+					</li>
+
+					<li><b>International Journal of Low-Carbon Technologies'2022</b>
+					<br>Novel method for microencapsulation of eutectic hydrated salt as a phase change material for thermal energy storage <a href=""><u>[link]</u></a> <br>
+					</li>
+				</ul>
+
+			</div>
+		</div>
+
+		<hr>
+
+		<h3 id="research">Research Experience</h3>
+		<div class="row">
+			<div class="col-md-12">
+				<ul>
+					<li><b>Applied Machine Learning Lab, City University of Hong Kong</b> (2024.06 - Present)
+					<br><i>Research Assistant - LLM Memory Efficiency & Multi-Agent Systems</i>
+					<br>• Developing quantized models with BAdam for memory-efficient large language models
+					<br>• Building multi-agent systems that simulate human behavior in virtual communities
+					<br>• Exploring parameter-efficient fine-tuning techniques for large-scale models
+					</li>
+
+					<li><b>Hong Kong Metropolitan University</b> (2022.06 - 2022.09)
+					<br><i>Research Assistant - Computer Vision & Unsupervised Learning</i>
+					<br>• Worked on image processing and unsupervised learning algorithms
+					<br>• Created high-quality datasets for computer vision research
+					<br>• Contributed to deep learning model development for image analysis
+					</li>
+
+					<li><b>The Chinese University of Hong Kong, Shenzhen</b> (2021 - 2023)
+					<br><i>Master's Research - Natural Language Processing & Data Science</i>
+					<br>• Conducted research on LLM applications under Prof. Benyou Wang and Prof. Xiao Li
+					<br>• Developed novel approaches for text analysis and feature selection
+					<br>• Published multiple papers on AI for healthcare and business applications
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<hr>
+
+		<h3 id="experience">Professional Experience</h3>
+		<div class="row">
+			<div class="col-md-12">
+				<ul>
+					<li><b>Shenzhen Aratek Technology Co., Ltd.</b> (03/2024 - 07/2024)
+					<br><i>AI Algorithm Engineer</i>
+					<br>• Developed deep learning solutions for clothing recognition in surveillance scenarios
+					<br>• Improved model accuracy in complex real-world environments
+					<br>• Optimized inference speed for real-time applications
+					</li>
+
+					<li><b>Huanding Big Data Institute</b> (06/2021 - 09/2021)
+					<br><i>Data Analyst Intern</i>
+					<br>• Applied machine learning to Chinese medicine traceability data
+					<br>• Conducted data wrangling and statistical analysis
+					<br>• Generated insights from traditional medicine databases
+					</li>
+
+					<li><b>QE Data Challenge</b> (2023)
+					<br><i>Participant</i>
+					<br>• Participated in data science competition
+					<br>• Developed predictive models for real-world business problems
+					</li>
+
+					<li><b>Generative AI and Application Camp</b> (2024)
+					<br><i>Team Leader</i>
+					<br>• Led development of Data-Agent, an LLM-based system for data analysis and visualization
+					<br>• Integrated multiple AI models for automated insights generation
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<hr>
+
+		<h3 id="awards">Awards & Honors</h3>
+		<div class="row">
+			<div class="col-md-12">
+				<ul>
+					<li><b>2022:</b> <span style="color:red">Gold Medal</span>, iENA - International Trade Fair "Ideas-Inventions-New Products"</li>
+					<li><b>2016:</b> <span style="color:red">Gold Medal</span>, Nuremberg International Competition Invention Award</li>
+					<li><b>2021:</b> Certificate of Blockchain for Business Project-based Internship, Hong Kong Blockchain Society</li>
+					<li><b>2024:</b> Peter Ho Conference Scholarships (selected candidate)</li>
+					<li>Multiple academic conference participations and research symposium presentations</li>
+				</ul>
+			</div>
+		</div>
+
+		<hr>
+
+		<h3 id="activities">Extracurricular Activities & Hobbies</h3>
+		<div class="row">
+			<div class="col-md-12">
+				<p>
+					Beyond research, I am passionate about various activities that enrich my life and inspire my work. I enjoy participating in academic conferences and workshops, where I can exchange ideas with researchers from around the world. I also value hands-on projects that bridge theory and practice, such as developing AI tools for real-world applications.
+				</p>
+
+				<p>
+					In my spare time, I enjoy exploring new technologies and staying up-to-date with the latest developments in AI and machine learning. I'm also interested in motorsports and animation, which help me maintain a balanced perspective and creative mindset.
+				</p>
+
+				<div class="hobby-images text-center">
+					<img src="Maxxx.jpg" alt="Hobby - Motorsports">
+					<img src="Xiaoxin.jpg" alt="Hobby - Animation">
+				</div>
+
+				<p><b>Academic & Professional Activities:</b></p>
+				<ul>
+					<li>Active participant in international conferences and research symposiums</li>
+					<li>Academic exchange programs and collaborative research projects</li>
+					<li>Member of data science and AI research communities</li>
+					<li>Mentor for junior students interested in machine learning research</li>
+				</ul>
+			</div>
+		</div>
+
+		<hr>
+
+		<h3 id="skills">Skills & Expertise</h3>
+		<div class="row">
+			<div class="col-md-12">
+				<p><b>Programming & Tools:</b></p>
+				<ul>
+					<li><b>Languages:</b> Python (Advanced), R, SQL</li>
+					<li><b>Deep Learning:</b> PyTorch, TensorFlow, Hugging Face Transformers, Diffusers</li>
+					<li><b>Tools:</b> Git, LaTeX, VSCode, Conda, Xshell, Jupyter</li>
+					<li><b>Frameworks:</b> Scikit-learn, Pandas, NumPy, Gradio</li>
+				</ul>
+
+				<p><b>Research Areas:</b></p>
+				<ul>
+					<li>Large Language Models (LLMs) and Parameter-Efficient Fine-Tuning</li>
+					<li>Multi-Agent Systems and Social Simulation</li>
+					<li>Computer Vision and Image Processing</li>
+					<li>Recommender Systems and Personalization</li>
+					<li>Urban Computing and Spatio-Temporal Analysis</li>
+					<li>Machine Learning for Healthcare and Finance</li>
+				</ul>
+			</div>
+		</div>
+
+		<hr>
+
+		<h3 id="contact">Contact & Collaboration</h3>
+		<div class="row">
+			<div class="col-md-12">
+				<p>
+					I am always open to interesting research collaborations and discussions. If you are interested in my work or would like to discuss potential projects, please feel free to reach out via email at <b>223040132 [at] link [dot] cuhk [dot] edu [dot] cn</b>.
+				</p>
+				
+				<p>
+					I am particularly interested in:
+					<ul>
+						<li>Efficient LLM training and deployment techniques</li>
+						<li>Multi-agent systems for real-world applications</li>
+						<li>AI for social good (healthcare, sustainability, education)</li>
+						<li>Interdisciplinary research combining AI with other domains</li>
+					</ul>
+				</p>
+			</div>
+		</div>
+
+		<hr>
+
+		<div class="row">
+			<div class="col-md-12 text-center">
+				<p style="color:#666;">
+					<i>Last Updated: December 2025</i><br>
+					© 2025 Zimo Zhao. All rights reserved.
+				</p>
+			</div>
+		</div>
+
+</div>
+</body>
+</html>
